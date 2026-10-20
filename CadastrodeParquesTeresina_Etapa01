@@ -1,0 +1,23 @@
+class ParqueUrbano:
+    def __init__(self, nome, bairro, area_m2, populacao_bairro):
+        self.nome: str = nome
+        self.bairro: str = bairro
+        self.area_m2: float = area_m2
+        self.populaçao_bairro: int = populacao_bairro
+
+    def __str__(self):
+        return (f'Parque: {self.nome}\n'
+                f'Bairro: {self.bairro}\n'
+                f'Área(m²): {self.area_m2}\n'
+                f'População do Bairro: {self.populaçao_bairro}')
+
+    def calculo_densidade_parque(self):
+        return self.area_m2/self.populaçao_bairro
+
+
+parque1 = ParqueUrbano('Parque Zoobotânico', 'Zoobotânico', 1270000, 587)
+print(parque1)
+print(
+    f'Sua densidade é de {parque1.calculo_densidade_parque():,.2f} m²/habitante no bairro.')
+print(
+    f'O bairro é um dos menos populosos de Teresina, com apenas {parque1.populaçao_bairro} habitantes o bairro é majoritariamente ocupado pelo parque.')
